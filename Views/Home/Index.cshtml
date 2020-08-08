@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Prueba técnica Lider de desarrollo EEP.</p>
+</div>
+
+<div class="container">
+    <form action="~/Home/Index" method="POST">
+    <div class="form-group">
+        <label for="InputId">Identificación</label>
+        <input class="form-control col-4 col-md-4 col-lg-4 col-xl-4" type="number" 
+            placeholder="Employee's id" id="InputId" name="InputId">
+        <small id="inputHelp" class="form-text text-muted col-4 col-md-8 col-xl-8">
+            Digite el id del empleado para consultar un empleado o dejelo vacio para consultarlos a todos.
+        </small>
+    </div>
+        <button type="submit" class="btn btn-primary">Obtener empleados</button>
+    </form>  
+    <br>
+    <br>
+    
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+            <th scope="col">id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Role</th>
+            <th scope="col">Contract</th>
+            <th scope="col">Anual Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        @if ( @ViewBag.employees.Count == 0)
+        { 
+            <tr>
+            <th scope="row"> </th>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            </tr>        
+        }
+
+        @for (var i = 0; i < @ViewBag.employees.Count; i++)
+        {
+            <tr>
+            <th scope="row">@ViewBag.employees[i].id</th>
+            <td>@ViewBag.employees[i].name</td>
+            <td>@ViewBag.employees[i].getRoleName()</td>
+            <td>@ViewBag.employees[i].getContractType()</td>
+            <td>@ViewBag.employees[i].getYearlySalary()</td>
+            </tr>        
+        }
+        </tbody>
+    </table>
+
+
+</div>
