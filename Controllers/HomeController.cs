@@ -18,7 +18,12 @@ namespace WebApiEEP.Controllers
             _logger = logger;
         }
 
-        
+        /// <summary>
+        /// Controller for the view /Home/Index
+        /// Consults for one or all employee from the Api
+        /// </summary>
+        /// <param name="InputId">Code of the employee to be shown</param>
+        /// <returns>Index View</returns>
         public async Task<IActionResult> Index(string InputId = "0")
         {
             Console.WriteLine($"InputId: {InputId}");
@@ -34,10 +39,20 @@ namespace WebApiEEP.Controllers
 
             return View();
         }
+
+        /// <summary>
+        /// Contact data of the evaluated programmer
+        /// </summary>
+        /// <returns>ContactData View</returns>
         public IActionResult ContactData()
         {
             return View();
         }
+        /// <summary>
+        /// Controler for the Class Design View
+        /// shows the class diagram
+        /// </summary>
+        /// <returns>ClassDesign view</returns>
         public IActionResult ClassDesign()
         {
             return View();

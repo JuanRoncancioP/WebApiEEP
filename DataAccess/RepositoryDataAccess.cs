@@ -11,6 +11,11 @@ namespace WebApiEEP.DataAccess
     public static class RepositoryDataAccess{
         private static readonly HttpClient client = new HttpClient();
         private static string UR = "http://masglobaltestapi.azurewebsites.net/api/Employees";
+        
+        /// <summary>
+        /// Conects to the api for download the employ information as a json
+        /// </summary>
+        /// <returns>List of repository with the information of each employee</returns>
         public static async Task<List<DataRepository>> ProcessRepositories()
         {
             client.DefaultRequestHeaders.Accept.Clear();

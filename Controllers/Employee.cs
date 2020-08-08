@@ -11,7 +11,10 @@ namespace WebApiEEP.Controllers
 
         public Employee(int id, string name, Contract contract, Role role ) =>
             (this.id, this.name, this.contract, this.role) = (id, name, contract, role);
-
+        /// <summary>
+        /// Return the result of getYearlySalary method from the attribute contract 
+        /// </summary>
+        /// <returns>Double. Employee's yearly Salary by type of contract.</returns>
         public double getYearlySalary()
         {
             return contract.getYearlySalary();
