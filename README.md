@@ -12,6 +12,9 @@ to download some employee information on a list and shows the user using boostra
 The aplication has a text field for read a number id of the employee and has button to querry the api
 for all the employee's information. But the app shows the information of the employee id that was asked using Linq. If there was no id given the app shows all the information avaible usin boostrap table and Razor.
 
+##Class diagram
+![](wwwroot/img/webapi.png)
+
 ## Model layer
 The Api use a class that map the json give for the api.
 
